@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">afv-top-android</string>
+    <string name="edt_email_login">Email</string>
+    <string name="edt_senha_login">Senha</string>
+    <string name="txt_btn_login">Entrar</string>
+    <string name="txt_titulo_saudacao">Seja bem vindo</string>
+    <string name="txt_card_clientes">Clientes</string>
+    <string name="txt_card_produtos">Produtos</string>
+    <string name="txt_card_vendas">Vendas</string>
+    <string name="txt_card_pdv">PDV</string>
+    <string name="txt_item_sinc_configuracoes">Configurações</string>
+    <string name="txt_btn_sincronizar">Sincronizar</string>
+    <string name="txt_btn_prosseguir_sinc">Prosseguir</string>
+    <string name="txt_item_sinc_clientes">Clientes</string>
+    <string name="txt_item_sinc_categorias_produtos">Categorias de produtos</string>
+    <string name="txt_item_sinc_produtos">Produtos</string>
+    <string name="txt_item_sinc_formas_pagamento">Formas de pagamento</string>
+    <string name="txt_item_sinc_vendas">Vendas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edt_cadastro_cliente_nome_completo">Nome completo...</string>
+    <string name="edt_cadastro_cliente_cpf">CPF...</string>
+    <string name="txt_btn_prosseguir">Prosseguir</string>
+    <string name="txt_btn_retornar">Retornar</string>
+    <string name="edt_cadastro_cliente_rg">RG...</string>
+    <string name="edt_cadastro_cliente_data_nascimento">Data de nascimento...</string>
+</resources>
