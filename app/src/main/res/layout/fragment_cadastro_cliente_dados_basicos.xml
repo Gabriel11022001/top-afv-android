@@ -109,6 +109,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:elevation="2dp"
         android:background="@drawable/spinner_estilo"
         app:layout_constraintStart_toStartOf="@id/edt_data_nascimento"
         app:layout_constraintEnd_toEndOf="@id/edt_data_nascimento"

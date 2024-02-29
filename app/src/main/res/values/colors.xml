@@ -12,4 +12,5 @@
     <color name="cor_primaria_variacao">#00337B</color>
     <color name="cor_secundaria">#38B6FF</color>
     <color name="borda_cards">#bdc3c7</color>
+    <color name="cinza_claro">#f5f6fa</color>
 </resources>

@@ -24,4 +24,6 @@
     <string name="txt_btn_retornar">Retornar</string>
     <string name="edt_cadastro_cliente_rg">RG...</string>
     <string name="edt_cadastro_cliente_data_nascimento">Data de nascimento...</string>
+    <string name="txt_nenhum_contato_adicionado">Nenhum contato adicionado</string>
+    <string name="txt_msg_nao_existem_clientes_cadastrados">Não existem clientes cadastrados</string>
 </resources>

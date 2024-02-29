@@ -1,8 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.CadastroClienteContatosFragment">
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/linear_layout_secao_titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/cinza_claro"
+        android:padding="8dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar contatos"
+            android:textColor="@color/cor_primaria"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="center" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn_adicionar_contato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adicionar"
+            android:layout_gravity="center"
+            android:drawableEnd="@drawable/ic_adicionar_pequeno" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_msg_nenhum_contato_adicionado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/txt_nenhum_contato_adicionado"
+        android:textColor="@color/cor_primaria"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyler_contatos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/linear_layout_secao_titulo"
+        app:layout_constraintEnd_toEndOf="@id/linear_layout_secao_titulo"
+        app:layout_constraintTop_toBottomOf="@id/linear_layout_secao_titulo"
+        app:layout_constraintBottom_toTopOf="@id/linear_layout_botoes_prosseguir_e_retornar"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/linear_layout_botoes_prosseguir_e_retornar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/cinza_claro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="10dp" >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_retornar_tela_adicionar_contato"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/botao_azul_padrao"
+            android:text="@string/txt_btn_retornar"
+            android:textColor="@color/white"
+            android:drawableStart="@drawable/ic_retornar"
+            android:layout_gravity="center" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_prosseguir_tela_adicionar_contato"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/botao_azul_padrao"
+            android:text="@string/txt_btn_prosseguir"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/ic_prosseguir"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

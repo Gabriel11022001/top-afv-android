@@ -16,4 +16,26 @@
         android:layout_margin="20dp"
         android:contentDescription="Cadastrar cliente" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_clientes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_mensagem_nao_existem_clientes_cadastrados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_msg_nao_existem_clientes_cadastrados"
+        android:textColor="@color/cor_primaria"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

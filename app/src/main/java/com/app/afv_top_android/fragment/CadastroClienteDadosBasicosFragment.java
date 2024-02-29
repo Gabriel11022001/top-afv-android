@@ -80,6 +80,62 @@ public class CadastroClienteDadosBasicosFragment extends Fragment implements Vie
         return view;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        try {
+            Bundle bundleDadosPassadosPelaProximaTela = getArguments();
+
+            if (bundleDadosPassadosPelaProximaTela != null) {
+                clienteId = bundleDadosPassadosPelaProximaTela.getInt("id_cliente");
+                ClienteRepositorio clienteRepositorio = new ClienteRepositorio(contexto);
+                Cliente cliente = clienteRepositorio.buscarPeloId(clienteId);
+
+                if (cliente != null) {
+                    edtNomeCompleto.setText(cliente.getNomeCompleto());
+                    edtCpf.setText(cliente.getCpf());
+                    edtRg.setText(cliente.getRg());
+                    int posicaoSexo = 0;
+
+                    for (int i = 0; i < sexos.size(); i++) {
+
+                        if (sexos.get(i).equals(cliente.getSexo())) {
+                            System.out.println(cliente.getSexo());
+                            posicaoSexo = i;
+                        }
+
+                    }
+
+                    spnSexo.setSelection(posicaoSexo);
+                }
+
+            }
+
+        } catch (Exception e) {
+            Log.e("erro", e.getMessage());
+            Toast.makeText(contexto, "Ocorreu um erro ao tentar-se buscar os dados do cliente!", Toast.LENGTH_LONG)
+                    .show();
+        }
+
+    }
+
+    private boolean deletarDadosCliente() {
+
+        try {
+            ClienteRepositorio clienteRepositorio = new ClienteRepositorio(contexto);
+            // clienteRepositorio.deletarCliente(clienteId);
+
+            return true;
+        } catch (Exception e) {
+            Toast.makeText(contexto, "Ocorreu um erro ao tentar-se deletar os dados do cliente!", Toast.LENGTH_LONG)
+                    .show();
+
+            return false;
+        }
+
+    }
+
     private boolean validarCamposCadastroClientePrimeiraEtapa() {
         boolean ok = true;
         String nome = edtNomeCompleto.getText().toString();
@@ -150,6 +206,12 @@ public class CadastroClienteDadosBasicosFragment extends Fragment implements Vie
             if (validarCamposCadastroClientePrimeiraEtapa()) {
                 clienteId = realizarPreCadastroCliente();
                 Log.i("id_cliente", "Id do cliente cadastrado: " + clienteId);
+                Bundle bundleTransferirIdClienteProximaTela = new Bundle();
+                bundleTransferirIdClienteProximaTela.putInt("id_cliente", clienteId);
+                getParentFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container_cadastro_cliente, CadastroClienteContatosFragment.class, bundleTransferirIdClienteProximaTela)
+                        .commit();
             }
 
         } catch (Exception e) {
@@ -177,10 +239,14 @@ public class CadastroClienteDadosBasicosFragment extends Fragment implements Vie
             alerta.setCancelable(false);
             alerta.setView(viewAlertaRetornar);
             alerta.setPositiveButton("Sim", (dialogInterface, i) -> {
-                Activity activity = getActivity();
 
-                if (activity != null) {
-                    activity.finish();
+                if (deletarDadosCliente()) {
+                    Activity activity = getActivity();
+
+                    if (activity != null) {
+                        activity.finish();
+                    }
+
                 }
 
             });
