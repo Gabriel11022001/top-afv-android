@@ -12,6 +12,11 @@
         android:theme="@style/Theme.Afvtopandroid"
         tools:targetApi="31">
         <activity
+            android:name=".ProdutosActivity"
+            android:exported="false"
+            android:label="Produtos"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".CadastroClienteActivity"
             android:exported="false"
             android:label="Cadastrar cliente"

@@ -22,8 +22,10 @@ import android.widget.Toast;
 import com.app.afv_top_android.R;
 import com.app.afv_top_android.model.Cliente;
 import com.app.afv_top_android.repositorio.ClienteRepositorio;
+import com.app.afv_top_android.repositorio.ContatoRepositorio;
 import com.app.afv_top_android.utils.SexoUtils;
 import com.app.afv_top_android.utils.SpinnerUtils;
+import com.santalu.maskara.widget.MaskEditText;
 
 import java.util.List;
 
@@ -35,8 +37,8 @@ public class CadastroClienteDadosBasicosFragment extends Fragment implements Vie
     private AppCompatButton btnProsseguir;
     private AppCompatButton btnRetornar;
     private EditText edtNomeCompleto;
-    private EditText edtCpf;
-    private EditText edtDataNascimento;
+    private MaskEditText edtCpf;
+    private MaskEditText edtDataNascimento;
     private EditText edtRg;
     private TextView feedbackNomeCompleto;
     private TextView feedbackCpf;
@@ -89,6 +91,7 @@ public class CadastroClienteDadosBasicosFragment extends Fragment implements Vie
 
             if (bundleDadosPassadosPelaProximaTela != null) {
                 clienteId = bundleDadosPassadosPelaProximaTela.getInt("id_cliente");
+                Log.i("teste", "Id do cliente: " + clienteId);
                 ClienteRepositorio clienteRepositorio = new ClienteRepositorio(contexto);
                 Cliente cliente = clienteRepositorio.buscarPeloId(clienteId);
 
@@ -123,8 +126,14 @@ public class CadastroClienteDadosBasicosFragment extends Fragment implements Vie
     private boolean deletarDadosCliente() {
 
         try {
+            // deletar contatos
+            ContatoRepositorio contatoRepositorio = new ContatoRepositorio(contexto);
             ClienteRepositorio clienteRepositorio = new ClienteRepositorio(contexto);
-            // clienteRepositorio.deletarCliente(clienteId);
+            contatoRepositorio.deletarTodosContatosClientes(this.clienteId);
+            // deletar endereços do cliente
+
+            // deletar os dados do cliente
+            clienteRepositorio.deletarCliente(this.clienteId);
 
             return true;
         } catch (Exception e) {

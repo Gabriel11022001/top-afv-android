@@ -32,7 +32,7 @@
         android:layout_marginTop="5dp" />
 
     <!-- Campo cpf do cliente -->
-    <EditText
+    <com.santalu.maskara.widget.MaskEditText
         android:id="@+id/edt_cpf"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -41,7 +41,9 @@
         app:layout_constraintEnd_toEndOf="@id/edt_nome_completo"
         app:layout_constraintTop_toBottomOf="@id/txt_feedback_nome"
         android:inputType="number"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        app:mask="___.___.___-__"
+        app:maskStyle="persistent" />
 
     <!-- Feedback campo cpf -->
     <TextView
@@ -80,7 +82,7 @@
         android:layout_marginTop="5dp" />
 
     <!-- Campo data de nascimento do cliente -->
-    <EditText
+    <com.santalu.maskara.widget.MaskEditText
         android:id="@+id/edt_data_nascimento"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -89,7 +91,9 @@
         app:layout_constraintEnd_toEndOf="@id/edt_rg"
         app:layout_constraintTop_toBottomOf="@id/txt_feedback_rg"
         android:inputType="date"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        app:mask="__/__/____"
+        app:maskStyle="normal" />
 
     <!-- Feedback campo de data de nascimento -->
     <TextView

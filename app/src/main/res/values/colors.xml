@@ -13,4 +13,6 @@
     <color name="cor_secundaria">#38B6FF</color>
     <color name="borda_cards">#bdc3c7</color>
     <color name="cinza_claro">#f5f6fa</color>
+    <color name="verde">#1A7800</color>
+    <color name="vermelho">#780004</color>
 </resources>

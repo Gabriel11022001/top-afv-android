@@ -46,7 +46,7 @@ public class ClientesActivity extends AppCompatActivity implements View.OnClickL
         }
 
         clientes = new ArrayList<>();
-        clienteAdapter = new ClienteAdapter(layoutInflater);
+        clienteAdapter = new ClienteAdapter();
         recyclerViewClientes.setAdapter(clienteAdapter);
         recyclerViewClientes.setLayoutManager(new LinearLayoutManager(this));
     }

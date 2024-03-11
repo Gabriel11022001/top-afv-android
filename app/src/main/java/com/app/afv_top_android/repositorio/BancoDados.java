@@ -26,6 +26,18 @@ public class BancoDados extends SQLiteOpenHelper {
         Log.i("tb_contatos", "Iniciando a criação da tabela tb_contatos...");
         sqLiteDatabase.execSQL(QueryCriarTabela.TB_CONTATOS);
         Log.i("tb_contatos", "Tabela tb_contatos criada com sucesso!");
+        // criando a tabela tb_tabelas_preco
+        Log.i("tb_tabelas_preco", "Iniciando a criação da tabela tb_tabelas_preco...");
+        sqLiteDatabase.execSQL(QueryCriarTabela.TB_TABELAS_PRECO);
+        Log.i("tb_tabelas_preco", "Tabela tb_tabelas_preco criada com sucesso!");
+        // criando a tabela tb_produtos
+        Log.i("tb_produtos", "Iniciando a criação da tabela tb_produtos...");
+        sqLiteDatabase.execSQL(QueryCriarTabela.TB_PRODUTOS);
+        Log.i("tb_produtos", "Tabela tb_produtos criada com sucesso!");
+        // criando a tabela tb_tabela_preco_produto
+        Log.i("tb_tabela_preco_produto", "Iniciando a criação da tabela tb_tabela_preco_produto...");
+        sqLiteDatabase.execSQL(QueryCriarTabela.TB_TABELA_PRECO_PRODUTO);
+        Log.i("tb_tabela_preco_produto", "Tabela tb_tabela_preco_produto criada com sucesso!");
     }
 
     @Override

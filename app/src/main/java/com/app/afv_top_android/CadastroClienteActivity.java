@@ -23,4 +23,9 @@ public class CadastroClienteActivity extends AppCompatActivity {
                 .commit();
     }
 
+    @Override
+    public void onBackPressed() {
+        // desabilitando o botão de voltar do android
+        // super.onBackPressed();
+    }
 }

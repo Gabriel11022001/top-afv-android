@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProdutosActivity">
+
+    <LinearLayout
+        android:id="@+id/linear_layout_filtro_produtos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        android:elevation="2dp" >
+
+        <Spinner
+            android:id="@+id/spn_opcoes_filtro_produtos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_estilo"
+            android:layout_weight="2"
+            android:layout_gravity="center|start" />
+
+        <EditText
+            android:id="@+id/edt_filtro_produtos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Digite para consultar..."
+            android:textColor="@color/cor_primaria"
+            android:inputType="text"
+            android:layout_weight="1"
+            android:layout_gravity="center" />
+
+        <ImageButton
+            android:id="@+id/btn_filtrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_filtrar"
+            android:backgroundTint="@android:color/transparent"
+            android:layout_gravity="center|end" />
+
+    </LinearLayout>
+
+    <!-- RecyclerView com a listagem dos produtos cadastrados no banco de dados -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_produtos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_layout_filtro_produtos" />
+
+    <TextView
+        android:id="@+id/txt_mensagem_nao_existem_produtos_cadastrados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_msg_nao_existem_produtos_cadastrados"
+        android:textColor="@color/cor_primaria"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

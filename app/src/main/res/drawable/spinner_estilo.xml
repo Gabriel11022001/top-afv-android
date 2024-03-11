@@ -12,13 +12,9 @@
 
                     <solid android:color="@color/white" />
 
-                    <corners android:radius="10dp" />
-
-                    <stroke android:color="@color/borda_cards" android:width="1dp" />
-
                     <padding
-                        android:bottom="5dp"
-                        android:top="5dp"
+                        android:bottom="2dp"
+                        android:top="2dp"
                         android:right="5dp"
                         android:left="5dp" />
 

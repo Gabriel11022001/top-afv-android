@@ -26,4 +26,8 @@
     <string name="edt_cadastro_cliente_data_nascimento">Data de nascimento...</string>
     <string name="txt_nenhum_contato_adicionado">Nenhum contato adicionado</string>
     <string name="txt_msg_nao_existem_clientes_cadastrados">Não existem clientes cadastrados</string>
+    <string name="txt_btn_salvar_contato">Salvar</string>
+    <string name="hint_descricao_contato">Descrição do contato...</string>
+    <string name="txt_msg_nao_existem_produtos_cadastrados">Não existem produtos cadastrados</string>
+    <string name="txt_label_tabela_preco">Tabela:</string>
 </resources>

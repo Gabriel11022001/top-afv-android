@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp" >
+
+    <EditText
+        android:id="@+id/edt_descricao_contato"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="@string/hint_descricao_contato"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spn_tipos_contato"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/spinner_estilo"
+        app:layout_constraintStart_toStartOf="@id/edt_descricao_contato"
+        app:layout_constraintEnd_toEndOf="@id/edt_descricao_contato"
+        app:layout_constraintTop_toBottomOf="@id/edt_descricao_contato"
+        android:layout_marginTop="15dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_salvar_contato"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_btn_salvar_contato"
+        android:background="@drawable/botao_azul_padrao"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/spn_tipos_contato"
+        app:layout_constraintEnd_toEndOf="@id/spn_tipos_contato"
+        app:layout_constraintTop_toBottomOf="@id/spn_tipos_contato"
+        android:layout_marginTop="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
